@@ -6,7 +6,7 @@ from app import celery
 
 @celery.task
 def classify_pdf_task(pdf_id):
-    category = Classify.classify()            # Classify the PDF
+    category = Classify.classify()        # Classify the PDF
 
     # Update database with classification result
     pdf_metadata = PDFMetadata.query.get(pdf_id)

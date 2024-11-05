@@ -38,7 +38,7 @@ def upload_pdf():
 
         celery_task.classify_pdf_task.delay(pdf_metadata.id)
 
-        return jsonify({"message": "PDF uploaded successfully!"}), 201
+        return jsonify({"message": "PDF uploaded successfully!", "id": pdf_metadata.id}), 201
 
 
 @app.route('/status/<int:pdf_id>', methods=['GET'])
